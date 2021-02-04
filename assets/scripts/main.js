@@ -6,7 +6,8 @@ element.addEventListener("input", updateValue);
 
 function updateValue() {
    // alert("it moved!!!");
-    element.value = slider.value;
+   slider.value = element.value;
+   // element.value = slider.value;
 }
 
 
