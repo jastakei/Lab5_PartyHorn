@@ -78,9 +78,9 @@ function makeParty() {
     mainImage.src = "./assets/media/images/party-horn.svg";
     hornSound.src = "./assets/media/audio/party-horn.mp3";
 }
-function playSound() {
+function playSound(event) {
     hornSound.play();
-    hornbtn.preventDefault();
+    event.preventDefault();
 }
 
 
