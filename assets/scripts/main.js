@@ -4,6 +4,7 @@ var element = document.getElementById("volume-number");
 var slider = document.getElementById("volume-slider");
 var hornbtn = document.getElementById("honk-btn");
 var hornSound = document.getElementById("horn-sound");
+hornbtn.volume = 1.00;
 var image = document.getElementById("volume-image");
 var mainImage = document.getElementById("sound-image");
 var air = document.getElementById("radio-air-horn");
@@ -25,9 +26,12 @@ function updateSlider() {
    hornSound.volume = slider.value/100;
    if (slider.value < 67 && slider.value > 33) {
        image.src = "./assets/media/icons/volume-level-2.svg";
+       hornbtn.disabled = false;
+
    }
     else if (slider.value < 34 && slider.value > 0) {
         image.src = "./assets/media/icons/volume-level-1.svg";
+        hornbtn.disabled = false;
    }
    else if (slider.value == 0) {
         image.src = "./assets/media/icons/volume-level-0.svg";
@@ -35,6 +39,7 @@ function updateSlider() {
     }
     else {
         image.src = "./assets/media/icons/volume-level-3.svg";
+        hornbtn.disabled = false;
     }
 }
 function updateNumber() {
@@ -42,9 +47,13 @@ function updateNumber() {
     hornSound.volume = element.value/100;
     if (slider.value < 67 && slider.value > 33) {
         image.src = "./assets/media/icons/volume-level-2.svg";
+        hornbtn.disabled = false;
+
     }
      else if (slider.value < 34 && slider.value > 0) {
          image.src = "./assets/media/icons/volume-level-1.svg";
+         hornbtn.disabled = false;
+
     }
     else if (slider.value == 0) {
          image.src = "./assets/media/icons/volume-level-0.svg";
@@ -53,6 +62,8 @@ function updateNumber() {
      }
      else {
          image.src = "./assets/media/icons/volume-level-3.svg";
+         hornbtn.disabled = false;
+
      }
 }
 function makeAir() {
@@ -69,6 +80,7 @@ function makeParty() {
 }
 function playSound() {
     hornSound.play();
+    hornbtn.preventDefault();
 }
 
 
