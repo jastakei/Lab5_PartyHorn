@@ -14,8 +14,8 @@ element.addEventListener("input", updateSlider);
 slider.addEventListener("input", updateNumber);
 hornbtn.addEventListener("click", playSound);
 air.addEventListener("click", makeAir);
-air.addEventListener("click", makeCar);
-air.addEventListener("click", makeParty);
+car.addEventListener("click", makeCar);
+party.addEventListener("click", makeParty);
 
 
 
@@ -23,10 +23,10 @@ function updateSlider() {
    // alert("it moved!!!");
    slider.value = element.value;
    hornSound.volume = slider.value/100;
-   if (slider.value < 67) {
+   if (slider.value < 67 && slider.value > 33) {
        image.src = "./assets/media/icons/volume-level-2.svg";
    }
-    else if (slider.value < 34) {
+    else if (slider.value < 34 && slider.value > 0) {
         image.src = "./assets/media/icons/volume-level-1.svg";
    }
    else if (slider.value == 0) {
@@ -40,10 +40,10 @@ function updateSlider() {
 function updateNumber() {
     element.value = slider.value;
     hornSound.volume = element.value/100;
-    if (slider.value < 67) {
+    if (slider.value < 67 && slider.value > 33) {
         image.src = "./assets/media/icons/volume-level-2.svg";
     }
-     else if (slider.value < 34) {
+     else if (slider.value < 34 && slider.value > 0) {
          image.src = "./assets/media/icons/volume-level-1.svg";
     }
     else if (slider.value == 0) {
