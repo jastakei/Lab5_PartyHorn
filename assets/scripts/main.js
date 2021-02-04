@@ -15,12 +15,15 @@ function updateSlider() {
    slider.value = element.value;
    hornSound.volume = slider.value/100;
    if (slider.value < 67) {
+       alert("yeet");
        image.src = "/Users/jasminetakei/Lab5_PartyHorn/assets/media/icons/volume-level-2.svg";
    }
     if (slider.value < 34) {
+        alert("we did it joe");
         image.src = "/Users/jasminetakei/Lab5_PartyHorn/assets/media/icons/volume-level-1.svg";
    }
    if (slider.value == 0) {
+       alert('idk whats wrong');
     image.src = "/Users/jasminetakei/Lab5_PartyHorn/assets/media/icons/volume-level-0.svg";
     }
    // element.value = slider.value;
@@ -32,7 +35,6 @@ function updateNumber() {
 }
 function playSound() {
     hornSound.play();
-    alert(hornSound.volume);
 }
 
 
